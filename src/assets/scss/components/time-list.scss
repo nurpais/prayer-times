@@ -1,0 +1,21 @@
+// .time-list {
+//   thead,
+//   .active-item {
+//     background-color: $color-success;
+//     color: #fff;
+//   }
+// }
+
+.time-list {
+  &__title {
+    font-size: 1.5rem;
+  }
+  &__table {
+    border: 1px solid #dee2e6;
+    thead {
+      border: 1px solid $success-color;
+    }
+  }
+
+ 
+}

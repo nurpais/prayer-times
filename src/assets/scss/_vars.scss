@@ -1,20 +1,29 @@
 $font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif;
 
 // Colors
-$color-dark-gray: #27272b;
-$color-success: #0a993c;
+$dark-gray-color: #27272b;
+$success-color: #0a993c;
 $theme-colors: (
-  "success": #0a993c,
+  "success": $success-color,
 );
+$body-color: $dark-gray-color;
+
 
 // Spacers
 $spacer: 1rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * 0.25,
-  2: $spacer * 0.5,
-  3: $spacer * 0.75,
-  4: $spacer,
-  5: $spacer * 1.25,
-  6: $spacer * 1.5,
+  1: $spacer * 0.5,
+  2: $spacer,
+  3: $spacer * 1.5,
+  4: $spacer * 2,
+  5: $spacer * 2.5,
+  6: $spacer * 3,
 ) !default;
+
+// Sizes
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 760px,
+);
