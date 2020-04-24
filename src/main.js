@@ -6,6 +6,10 @@ import store from "./store";
 
 Vue.config.productionTip = false;
 
+Vue.filter("rmUTC", value => {
+  return value.replace("(+06)", "").trim();
+});
+
 new Vue({
   router,
   store,

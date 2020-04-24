@@ -1,21 +1,29 @@
-// .time-list {
-//   thead,
-//   .active-item {
-//     background-color: $color-success;
-//     color: #fff;
-//   }
-// }
-
 .time-list {
   &__title {
     font-size: 1.5rem;
   }
   &__table {
     border: 1px solid #dee2e6;
+    @include media-breakpoint-down(sm) {
+      display: none;
+    }
     thead {
       border: 1px solid $success-color;
     }
+    .active-item {
+      background-color: lighten($success-color, 3%) !important;
+      color: #fff;
+    }
+    tbody {
+      td {
+        padding: 0.5rem;
+      }
+    }
   }
 
- 
+  &__mobile {
+    @include media-breakpoint-up(md) {
+      display: none;
+    }
+  }
 }
