@@ -8,7 +8,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    gregorianMonth: [
+    gregorianMonths: [
       "Январь",
       "Февраль",
       "Март",
@@ -22,7 +22,7 @@ export default new Vuex.Store({
       "Ноябрь",
       "Декабрь"
     ],
-    hijriMonth: [
+    hijriMonths: [
       "Мухаррам",
       "Сафар",
       "Раби аль-авваль",
@@ -35,7 +35,16 @@ export default new Vuex.Store({
       "Шавваль",
       "Зу-ль-када",
       "Зу-ль-хиджа"
-    ]
+    ],
+    gregorianWeeks: {
+      Monday: "Понедельник",
+      Tuesday: "Вторник",
+      Wednesday: "Среда",
+      Thursday: "Четверг",
+      Friday: "Пятница",
+      Saturday: "Суббота",
+      Sunday: "Воскресенье"
+    }
   },
   mutations: {},
   actions: {},

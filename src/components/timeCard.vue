@@ -114,10 +114,10 @@ export default {
   },
   computed: {
     gregorianMonths() {
-      return this.$store.state.gregorianMonth;
+      return this.$store.state.gregorianMonths;
     },
     hijriMonths() {
-      return this.$store.state.hijriMonth;
+      return this.$store.state.hijriMonths;
     }
   }
 };

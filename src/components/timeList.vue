@@ -41,7 +41,23 @@
         </tbody>
       </table>
       <div class="time-list__mobile">
-        mob
+        <ul
+          v-for="(item, index) in date"
+          :key="index"
+          :class="{ 'active-item': index == new Date().getDate() - 1 }"
+        >
+          <li class="time-list__mobile-head">
+            {{ index + 1 }}
+            {{ gregorianMonths[item.date.gregorian.month.number - 1] }},
+            {{ gregorianWeeks[item.date.gregorian.weekday.en] }}
+          </li>
+          <li><span>Фаджр</span> {{ item.timings.Fajr | rmUTC }}</li>
+          <li><span>Восход</span> {{ item.timings.Sunrise | rmUTC }}</li>
+          <li><span>Зухр</span> {{ item.timings.Dhuhr | rmUTC }}</li>
+          <li><span>Аср</span> {{ item.timings.Asr | rmUTC }}</li>
+          <li><span>Магриб</span> {{ item.timings.Maghrib | rmUTC }}</li>
+          <li><span>Иша</span> {{ item.timings.Isha | rmUTC }}</li>
+        </ul>
       </div>
     </div>
   </div>
@@ -54,6 +70,14 @@ export default {
     date: {
       type: Array,
       required: true
+    }
+  },
+  computed: {
+    gregorianWeeks() {
+      return this.$store.state.gregorianWeeks;
+    },
+    gregorianMonths() {
+      return this.$store.state.gregorianMonths;
     }
   }
 };

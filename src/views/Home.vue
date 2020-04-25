@@ -26,7 +26,6 @@ export default {
     dataCalculate(data) {
       // Get current date
       let getDay = new Date().getDate() - 1;
-      console.log(getDay);
       let current = data[getDay];
       // Get current time
       this.currentTime = current.timings;
