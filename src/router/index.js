@@ -27,4 +27,10 @@ const router = new VueRouter({
   routes
 });
 
+const defaultTitle = "Время намазов";
+router.afterEach(to => {
+  Vue.nextTick(() => {
+    document.title = to.meta.title || defaultTitle;
+  });
+});
 export default router;
