@@ -36,7 +36,7 @@ export default {
   mounted() {
     axios
       .get(
-        "http://api.aladhan.com/v1/calendarByCity?city=Bishkek&country=KG&method=3&school=1"
+        "https://api.aladhan.com/v1/calendarByCity?city=Bishkek&country=KG&method=3&school=1"
       )
       .then(res => {
         this.dataCalculate(res.data.data);

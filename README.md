@@ -1,4 +1,8 @@
-# islam-times
+# Islam prayer times
+
+### Demo
+
+https://prayer-times-f58bf.web.app
 
 ## Project setup
 ```
