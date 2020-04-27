@@ -1,74 +1,43 @@
-// .time-card {
-//   &__title {
-//     color: $color-dark-gray;
-//     font-weight: 500;
-//     font-size: 2rem;
-//   }
-//   &__body {
-//     padding: 2rem 2rem calc(2rem + 14px);
-//   }
-//   &__timings {
-//     position: relative;
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       left: 0;
-//       bottom: 0;
-//       width: 100%;
-//       height: 2px;
-//       background-color: darken($color-success, 10%);
-//       z-index: 5;
-//       @include media-breakpoint-down(sm) {
-//         display: none;
-//       }
-//     }
-//   }
-//   &__item {
-//     position: relative;
-//     padding-bottom: 28px;
-//     color: rgba(255, 255, 255, 0.9);
-//     &:not(.disable-time)::after {
-//       content: "";
-//       position: absolute;
-//       bottom: -14px;
-//       left: calc(50% - 14px);
-//       width: 28px;
-//       height: 28px;
-//       border: 2px solid darken($color-success, 10%);
-//       border-radius: 50%;
-//       background-color: $color-success;
-//       z-index: 10;
-//       @include media-breakpoint-down(sm) {
-//         display: none;
-//       }
-//     }
-//     &.active-time {
-//       font-weight: 500;
-//       color: #fff;
-//       &::after {
-//         background-color: #fff;
-//       }
-//     }
-//   }
-//   &__time {
-//     font-size: 2rem;
-//   }
-// }
-.time-card {
-  &__body {
-    padding: 1.5rem 1.5rem 0;
+.card {
+  padding: 0.75rem 1.25rem;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+  border: 0;
+  &-header {
+    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
+      0 7px 10px -5px rgba(76, 175, 80, 0.4);
+    background: linear-gradient(60deg, #66bb6a, #43a047);
+    border: 0;
+    margin-top: -2rem;
   }
-  &__title {
-    font-weight: 500;
-    font-size: 2rem;
+  &-title {
+    font-weight: 300;
+    font-size: 2.25rem;
+    margin: 0;
+    color: #fff;
   }
-  &__item {
-    padding-bottom: 1.5rem;
+  &-date {
+    display: flex;
+    justify-content: space-between;
+    @include media-breakpoint-down(xs) {
+      flex-direction: column;
+      &__item {
+        margin-bottom: 0.3em;
+      }
+      &__item:nth-child(1) {
+        order: 2;
+      }
+      &__item:nth-child(2) {
+        order: 1;
+      }
+      &__item:nth-child(3) {
+        order: 3;
+      }
+    }
   }
-  &__time {
-    font-size: 2rem;
-  }
-  &__name {
-    font-size: 1rem;
+  &-times {
+    margin-top: 20px;
+    &__time {
+      font-size: 1.6rem;
+    }
   }
 }

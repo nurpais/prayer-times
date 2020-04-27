@@ -1,12 +1,13 @@
 $font-family-sans-serif: Roboto, "Helvetica Neue", Arial, sans-serif;
-
+$font-weight-base:  300;
 // Colors
-$dark-gray-color: #27272b;
-$success-color: #0a993c;
+$dark-gray-color: #333;
+$success-color: #55b559;
 $theme-colors: (
   "success": $success-color,
 );
 $body-color: $dark-gray-color;
+$body-bg: #eee;
 
 // Spacers
 $spacer: 1rem !default;

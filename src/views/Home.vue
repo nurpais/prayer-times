@@ -38,6 +38,8 @@ export default {
     const currentMonth = date.getMonth() + 1;
     const currentYear = date.getFullYear();
     const times = JSON.parse(localStorage.getItem("times"));
+
+    // If true > from localStorage
     if (
       times &&
       times[0].date.gregorian.month.number == currentMonth &&
@@ -46,8 +48,8 @@ export default {
       this.dataCalculate(times);
       this.monthDate = times;
     } else {
+      // Else > get data from api
       localStorage.removeItem("times");
-
       axios
         .get(
           "https://api.aladhan.com/v1/calendarByCity?city=Bishkek&country=KG&method=3&school=1"
@@ -55,6 +57,7 @@ export default {
         .then(res => {
           this.dataCalculate(res.data.data);
           this.monthDate = res.data.data;
+          // set to localStorage
           localStorage.setItem("times", JSON.stringify(res.data.data));
         });
     }
