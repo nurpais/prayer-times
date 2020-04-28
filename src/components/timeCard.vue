@@ -1,8 +1,10 @@
 <template>
   <div class="card card-success rounded-lg text-center box-shadow mt-6">
+    <!-- Header -->
     <div class="card-header rounded-sm">
-      <h1 class="card-title">Бишкек. Время намазов</h1>
+      <h1 class="card-title card-title-lg">Бишкек. Время намазов</h1>
     </div>
+    <!-- Body -->
     <div class="card-body">
       <!-- Card date -->
       <div class="card-date" v-if="date.gregorian">
