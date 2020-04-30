@@ -2,8 +2,15 @@
 @import "_vars";
 @import "bootstrap/scss/bootstrap";
 @import "_helps";
+@import "_mixins";
 @import "components/card";
+
 
 html {
   min-width: 320px;
+  font-size: 16px;
+}
+
+img {
+  width: 100%;
 }

@@ -1,44 +1,81 @@
 .card {
-  padding: 0.75rem 1.25rem 0;
-  border: 0;
-  &-success .card-header {
-    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.14),
-      0 7px 10px -5px rgba(76, 175, 80, 0.4);
-    background: linear-gradient(60deg, #66bb6a, #43a047);
-  }
-  &-success .active-item {
-    background: linear-gradient(60deg, #66bb6a, #43a047);
-    color: #fff;
-  }
+  @include box-shadow;
   &-header {
-    border: 0;
-    margin-top: -2rem;
-    color: #fff;
+    background-color: #fff;
+    display: flex;
+    align-items: flex-end;
+    padding: 1rem 0 1.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    border-bottom: 1px solid #eee;
+  }
+  &-icon {
+    min-width: 76px;
+    width: 76px;
+    height: 76px;
+    padding: 0.4rem;
+    align-self: flex-start;
+    @include gradient;
+    @include gradient-box-shadow;
+    @include media-breakpoint-up(md) {
+      margin-top: -2rem;
+    }
   }
   &-title {
-    font-weight: 300;
+    line-height: 1.4;
+    font-size: 1.3rem;
     margin: 0;
-    color: #fff;
-    font-size: 1.6rem;
-    @include media-breakpoint-down(xs) {
-      font-size: 1.6rem;
+    @include media-breakpoint-up(md) {
+      display: flex;
+      align-items: flex-end;
+      width: 100%;
+      line-height: 0.6;
+      margin-bottom: 0.75rem;
     }
-  }
-  &-title-lg {
-    font-size: 2.25rem;
-  }
-  &-subtitle {
-    margin-top: 0.5em;
   }
 
-  .table {
-    th {
-      font-weight: 400;
+  .text-sm {
+    font-size: 14px;
+    color: #999;
+  }
+  &-times {
+    &-item {
+      padding: 1.5rem;
     }
-    td,
-    th {
+    &-time {
+      font-size: 1.5rem;
+    }
+  }
+  &-footer {
+    padding: 1rem 0 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    background-color: #fff;
+    border-top: 1px solid #eee;
+    &-date {
+      display: flex;
+      flex-direction: column;
+      &-item {
+        margin-bottom: 0.3rem;
+      }
+      @include media-breakpoint-up(md) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+  }
+  .time-list-table {
+    th,
+    td {
       border: 0;
-      border-bottom: 1px solid #ddd;
+      border-bottom: 1px solid #eee;
+    }
+    th {
+      font-weight: normal;
+    }
+    tr.active-item {
+      @include gradient;
+      color: #fff;
     }
     tr:last-child {
       td {
@@ -46,52 +83,30 @@
       }
     }
   }
-  &-list {
-    padding: 0;
+  .time-list-mobile {
     list-style: none;
-
+    padding: 0;
     li {
       display: flex;
       justify-content: space-between;
-      padding: 0.5rem;
-      border-bottom: 1px solid #ddd;
+      padding: 0.75rem;
+      border-bottom: 1px solid #eee;
     }
     li:last-child {
       border: 0;
     }
-    &-header {
-      justify-content: center !important;
-      background-color: #f9f9f9;
+    li.time-list-mobile-header {
       border: 1px solid #d8d8d8;
-    }
-  }
-
-  &-date {
-    display: flex;
-    justify-content: space-between;
-    @include media-breakpoint-down(xs) {
-      flex-direction: column;
-      &__item {
-        margin-bottom: 0.3em;
+      background-color: #f9f9f9;
+      text-align: center;
+      display: block;
+      font-weight: normal;
+      &.active-item {
+        @include gradient;
+        @include gradient-box-shadow;
+        color: #fff;
+        border: 0;
       }
-      &__item:nth-child(1) {
-        order: 2;
-      }
-      &__item:nth-child(2) {
-        order: 1;
-      }
-      &__item:nth-child(3) {
-        order: 3;
-      }
-    }
-  }
-  &-times {
-    margin-top: 20px;
-    &__item {
-      margin-bottom: 2.5rem;
-    }
-    &__time {
-      font-size: 1.6rem;
     }
   }
 }

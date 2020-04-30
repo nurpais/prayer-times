@@ -1,15 +1,21 @@
 <template>
   <div>
-    <div class="card card-success rounded-lg box-shadow text-center mt-6">
-      <!-- Header -->
-      <div class="card-header rounded-sm">
-        <h3 class="card-title">Расписание намазов на месяц. Бишкек</h3>
-        <div class="card-subtitle">Апрель 2020</div>
+    <div class="card rounded-lg mt-6">
+      <!-- Card Header -->
+      <div class="card-header">
+        <div class="card-icon rounded-sm mr-2">
+          <img src="../assets/images/svg/Carpet.svg" alt="Carpet" />
+        </div>
+        <div class="card-title">
+          <div class="mr-1">Бишкек.</div>
+          <div class="mr-1">Расписание намазов на месяц.</div>
+          <div class="text-sm ml-auto">{{ currentDate }}</div>
+        </div>
       </div>
-
-      <!-- Body -->
-      <div class="card-body px-0">
-        <table class="table mobile-none">
+      <!-- Card Body -->
+      <div class="card-body pt-1">
+        <!-- Desktop time list -->
+        <table class="table time-list-table mobile-none text-center">
           <thead>
             <tr>
               <th scope="col">Число</th>
@@ -37,14 +43,14 @@
             </tr>
           </tbody>
         </table>
-
+        <!-- Mobile time list -->
         <ul
-          class="card-list desktop-none"
+          class="time-list-mobile desktop-none"
           v-for="(item, index) in date"
           :key="index"
         >
           <li
-            class="card-list-header rounded-sm"
+            class="time-list-mobile-header rounded-sm"
             :class="{ 'active-item': index == new Date().getDate() - 1 }"
           >
             {{ index + 1 }}
@@ -96,6 +102,11 @@ export default {
     },
     gregorianMonths() {
       return this.$store.state.gregorianMonths;
+    },
+    currentDate() {
+      return `${
+        this.$store.state.gregorianMonths[new Date().getMonth()]
+      } ${new Date().getFullYear()}`;
     }
   }
 };
