@@ -36,15 +36,9 @@ export default {
   mounted() {
     let date = new Date();
     const currentMonth = date.getMonth() + 1;
-    const currentYear = date.getFullYear();
     const times = JSON.parse(localStorage.getItem("times"));
-
-    // If true > from localStorage
-    if (
-      times &&
-      times[0].date.gregorian.month.number == currentMonth &&
-      times[0].date.gregorian.year == currentYear
-    ) {
+    // If times and current month
+    if (times && times[0].date.gregorian.month.number == currentMonth) {
       this.dataCalculate(times);
       this.monthDate = times;
     } else {
